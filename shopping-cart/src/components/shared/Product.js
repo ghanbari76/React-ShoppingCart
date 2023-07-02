@@ -1,9 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 //Function
 import { shorten } from '../../helper/function';
-
-import { Link } from 'react-router-dom';
 
 const Product = ({productData}) => {
     return (
