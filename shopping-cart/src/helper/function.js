@@ -17,5 +17,4 @@ const quantityCount = (state,id) => {
 }
 
 
-
 export { shorten,isInCart,quantityCount };
