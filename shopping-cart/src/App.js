@@ -9,12 +9,14 @@ import ProductDetails from "./components/ProductDetails";
 //Context
 import ProductContextProvider from './context/ProductContextProvider';
 import CartContextProvider from "./context/CartContextProvider";
+import Navbar from "./components/shared/Navbar";
 
 function App() {
   return (
     <div className="App">
       <ProductContextProvider>
         <CartContextProvider>
+          <Navbar />
           <Switch>
             <Route path="/products/:id" component={ProductDetails} />
             <Route path="/products" component={Store} />
