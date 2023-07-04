@@ -3,13 +3,13 @@ import React,{ useReducer,createContext } from 'react';
 const initialState = {
     selectedItems : [],
     itemsCounter : 0,
-    total : 0,
+    totalPrice : 0,
     checkout : false,
 }
 const sumItems = items => {
     const itemsCounter = items.reduce((totalCount,product) => totalCount + product.quantity,0);
-    const totalItemsPrice = items.reduce((totalPrice,product) => totalPrice + product.price*product.quantity,0).toFixed(2);
-    return {itemsCounter,totalItemsPrice}
+    const totalPrice = items.reduce((totalPrice,product) => totalPrice + product.price*product.quantity,0).toFixed(2);
+    return {itemsCounter,totalPrice};
 }
 
 const cartReducer = (state,action) => {
@@ -21,14 +21,15 @@ const cartReducer = (state,action) => {
             return{
                 ...state,
                 selectedItems:[...state.selectedItems],
-                ...sumItems(state.selectedItems)
+                ...sumItems(state.selectedItems),
+                checkout : false
             }
         case "REMOVE_ITEM" :
             const newSelectedItems = state.selectedItems.filter(item => item.id !== action.payload.id);
             return {
                 ...state,
                 selectedItems : [...newSelectedItems],
-                ...sumItems(state.selectedItems)
+                ...sumItems(newSelectedItems)
             }
         case "INCREASE" :
             const indexI = state.selectedItems.findIndex(item => item.id === action.payload.id);

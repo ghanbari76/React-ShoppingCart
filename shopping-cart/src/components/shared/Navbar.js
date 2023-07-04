@@ -12,7 +12,8 @@ const Navbar = () => {
             <div style={{display:"flex",justifyContent:"space-between",padding:"20px"}}>
                 <Link to="/products">products</Link>
                 <div>
-                    <img src={shopIcon} alt='shopIcon' />
+                    <Link to="/cart"><img src={shopIcon} alt='shopIcon' /></Link>
+                    
                     <span>{state.itemsCounter}</span>
                 </div>
             </div>

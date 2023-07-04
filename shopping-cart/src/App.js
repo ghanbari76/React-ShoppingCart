@@ -10,6 +10,7 @@ import ProductDetails from "./components/ProductDetails";
 import ProductContextProvider from './context/ProductContextProvider';
 import CartContextProvider from "./context/CartContextProvider";
 import Navbar from "./components/shared/Navbar";
+import ShopCart from "./components/ShopCart";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <CartContextProvider>
           <Navbar />
           <Switch>
+            <Route path="/cart" component={ShopCart} />
             <Route path="/products/:id" component={ProductDetails} />
             <Route path="/products" component={Store} />
             <Redirect to="/products" />
