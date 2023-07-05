@@ -12,7 +12,7 @@ const Navbar = () => {
     return (
         <div className={styles.mainContainer}>
             <div className={styles.container}>
-                <Link className={styles.productLink} to="/products">products</Link>
+                <Link className={styles.productLink} to="/products">Products</Link>
                 <div className={styles.iconContainer}>
                     <Link to="/cart"><img src={shopIcon} alt='shopIcon' /></Link>
                     <span>{state.itemsCounter}</span>

@@ -1,6 +1,7 @@
 const shorten = (title) => {
     const splitedTitle = title.split(" ");
-    const newTitle = `${splitedTitle[0]} ${splitedTitle[1]}`; 
+    const filteredTitle = splitedTitle.filter(item => item.length > 1);
+    const newTitle = `${filteredTitle[0]} ${filteredTitle[1]}`; 
     return newTitle;
 }
 const isInCart = (state,id) => {

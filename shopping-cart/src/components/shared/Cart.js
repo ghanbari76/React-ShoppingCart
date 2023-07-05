@@ -4,6 +4,8 @@ import React,{ useContext } from 'react';
 import { CartContext } from '../../context/CartContextProvider';
 //Icons
 import trashIcon from "../../assets/icons/trash.svg";
+//Function
+import { shorten } from '../../helper/function';
 //Style
 import styles from "./Cart.module.css";
 
@@ -14,8 +16,8 @@ const Cart = (props) => {
         <div className={styles.container}>
             <img className={styles.productImage} src={image} alt='productImage' />
             <div className={styles.data}>
-                <h3>{(title)}</h3>
-                <p>{price}</p>
+                <h3>{shorten(title)}</h3>
+                <p>{price} $</p>
             </div>
             <div>
                 <span className={styles.quantity}>{quantity}</span>
