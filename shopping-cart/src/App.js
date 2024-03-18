@@ -11,6 +11,8 @@ import ProductContextProvider from './context/ProductContextProvider';
 import CartContextProvider from "./context/CartContextProvider";
 import Navbar from "./components/shared/Navbar";
 import ShopCart from "./components/ShopCart";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
             <Route path="/cart"  element={<ShopCart />} />
             <Route path="/products/:id"  element={<ProductDetails />} />
             <Route path="/products"  element={<Store />} />
+            <Route path="/login"  element={<Login />} />
+            <Route path="/signup"  element={<SignUp />} />
             <Route path="/*"  element={<Navigate to="/products" />} />
           </Routes>
         </CartContextProvider>
