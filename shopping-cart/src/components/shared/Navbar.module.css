@@ -13,6 +13,36 @@
     height: 40px;
     padding: 15px 180px;
 }
+.navbarRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginContainer {
+    border: 1px solid gray;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(236, 240, 240);
+}
+.loginLink,
+.signupLink {
+    text-decoration: none;
+    margin: 0 5px;
+    padding: 10px;
+    color: #1a73e8;
+    transition: all 0.3s ease-in;
+}
+.loginLink:hover,
+.signupLink:hover {
+    color: #0b499b;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.verticalLine {
+    color: red;
+    font-weight: bold;
+}
 .productLink {
     text-decoration: none;
     color: #1a73e8;
@@ -28,6 +58,7 @@
 }
 .iconContainer {
     position: relative;
+    margin-right: 10px;
 }
 .iconContainer img {
     width: 40px;
@@ -47,6 +78,7 @@
     font-size: 0.75rem;
     text-align: center;
 }
+
 @media(max-width:1200px) {
     .container {
         padding: 15px 80px;
