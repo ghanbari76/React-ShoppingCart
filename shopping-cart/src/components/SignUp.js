@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 
 //Function
 import { validate } from '../helper/validate';
+import { notify } from '../helper/toast';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+
 
 const SignUp = () => {
     const [data,setData] = useState({
@@ -36,9 +40,9 @@ const SignUp = () => {
     const submitHandler = (event) => {
         event.preventDefault();
         if (!Object.keys(errors).length) {
-            console.log("You Signed in successfuly")
+            notify("You Signed in successfuly","success")
         } else {
-            console.log("Invalid data");
+            notify("Invalid data","error");
             setTouched({
                 name : true,
                 email : true,
@@ -82,6 +86,7 @@ const SignUp = () => {
                     <button type='submit'>SignUp</button>
                 </div>
             </form>
+        <ToastContainer />
         </div>
     );
 };
