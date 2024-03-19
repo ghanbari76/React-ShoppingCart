@@ -22,7 +22,7 @@ const SignUp = () => {
     const [errors,setErrors] = useState({});
     const [touched,setTouched] = useState({});
     useEffect(() => {
-        setErrors(validate(data))
+        setErrors(validate(data,"Signup"))
     },[data,touched])
     const changeHandler = (event) => {
         if (event.target.name === "isAccepted") {
@@ -43,15 +43,12 @@ const SignUp = () => {
     const submitHandler = (event) => {
         event.preventDefault();
         if (!Object.keys(errors).length) {
-            notify("You Signed in successfuly","success")
+            notify("You Signed Up successfuly","success")
         } else {
             notify("Invalid data","error");
             setTouched({
-                name : true,
                 email : true,
                 password : true,
-                confirmPassword : true,
-                isAccepted : true
             })
         }
     }
