@@ -79,14 +79,37 @@
     text-align: center;
 }
 
+.searchContainer input {
+    padding: 10px;
+    border-radius:10px 0 0 10px;
+    border: 1px solid gray;
+    width: 300px;
+}
+.searchContainer input:focus {
+    outline: none;
+}
+.searchContainer button {
+    padding: 10px;
+    border-radius: 0 10px 10px 0 ;
+    border: 1px solid gray;
+}
+
 @media(max-width:1200px) {
     .container {
         padding: 15px 80px;
     }
 }
+@media(max-width:876px) {
+    .searchContainer input {
+        width: 200px;
+    }
+}
 @media(max-width:768px) {
     .container {
         padding: 15px 40px;
+    }
+    .searchContainer {
+        display: none;
     }
 }
 @media(max-width:555px) {
