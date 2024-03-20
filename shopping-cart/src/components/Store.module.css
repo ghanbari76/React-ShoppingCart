@@ -1,10 +1,40 @@
 .container {
     display: flex;
+    justify-content: space-between;
+    padding: 0 150px;
+    margin: 30px 0 30px;
+}
+.products {
+    width: 100%;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 150px;
-    padding: 0 150px;
+    background-color: rgb(246, 245, 245);
+    border-radius: 5px;
+    padding: 10px 0 5px;
+}
+.searchContainer {
+    margin-top: 100px;
+}
+.searchContainer input {
+    padding: 10px;
+    border-radius:10px 0 0 10px;
+    border: 2px dashed rgb(245, 98, 84);
+
+    width: 300px;
+}
+.searchContainer input:focus {
+    outline: none;
+}
+.searchContainer button {
+    padding: 10px;
+    border-radius: 0 10px 10px 0 ;
+    border: 2px dashed rgb(245, 98, 84);
+    border-left-color: white;
+}
+.searchContainer button:hover {
+    background-color: burlywood;
+    border: 2px solid rgba(245, 98, 84,0.5) ;
 }
 @media(max-width:1200px) {
     .container {
@@ -21,5 +51,8 @@
     .container {
         justify-content: center;
         padding: 15px 10px;
+    }
+    .searchContainer input {
+        width:150px;
     }
 }
