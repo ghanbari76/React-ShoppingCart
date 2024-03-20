@@ -9,18 +9,18 @@ import styles from "./Navbar.module.css"
 
 const Navbar = () => {
     const {state} = useContext(CartContext);
-    const [search,setSearch] = useState("");
-    const searchHandler = () => {
-        console.log(search)
-    }
+    // const [search,setSearch] = useState("");
+    // const searchHandler = () => {
+    //     console.log(search)
+    // }
     return (
         <div className={styles.mainContainer}>
             <div className={styles.container}>
                 <Link className={styles.productLink} to="/products">Products</Link>
-                <div className={styles.searchContainer}>
+                {/* <div className={styles.searchContainer}>
                     <input type='text' placeholder="I'm shopping for..." value={search} onChange={event => setSearch(event.target.value.toLowerCase().trim())} />
                     <button onClick={searchHandler}>Search</button>
-                </div>
+                </div> */}
                 <div className={styles.navbarRight}>
                     <div className={styles.loginContainer}>
                         <Link className={styles.loginLink} to="/login">Login</Link>
