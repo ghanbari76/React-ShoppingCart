@@ -36,6 +36,10 @@
     background-color: burlywood;
     border: 2px solid rgba(245, 98, 84,0.5) ;
 }
+.categoryList {
+    display: flex;
+    align-items: center;
+}
 @media(max-width:1200px) {
     .container {
         padding: 15px 80px;
