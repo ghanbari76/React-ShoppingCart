@@ -9,7 +9,7 @@ import { ProductsContext } from '../context/ProductContextProvider';
 
 //Style
 import styles from "./Store.module.css"
-import { createQueryObject, filterProducts, searchProducts } from '../helper/function';
+import { createQueryObject, filterProducts, getInitialQuery, searchProducts } from '../helper/function';
 
 const Store = () => {
     const products = useContext(ProductsContext);
@@ -21,10 +21,13 @@ const Store = () => {
 
     useEffect(() => {
         setDisplayed(products);
+        setQuery(getInitialQuery(searchParams))
     }, [products]);
 
     useEffect(() => {
         setSearchParams(query);
+        setSearch(query.search || "");
+
         let finalProducts = searchProducts(products, query.search);
         finalProducts = filterProducts(finalProducts, query.category);
         setDisplayed(finalProducts);
