@@ -1,4 +1,5 @@
 import React,{ useContext, useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 //Components
 import Product from './shared/Product';
@@ -8,7 +9,7 @@ import { ProductsContext } from '../context/ProductContextProvider';
 
 //Style
 import styles from "./Store.module.css"
-import { filterProducts, searchProducts } from '../helper/function';
+import { createQueryObject, filterProducts, searchProducts } from '../helper/function';
 
 const Store = () => {
     const products = useContext(ProductsContext);
@@ -16,27 +17,28 @@ const Store = () => {
     const [displayed,setDisplayed] = useState([]);
     const [search,setSearch] = useState("");
     const [query,setQuery] = useState({});
+    const [searchParams,setSearchParams] = useSearchParams();
 
     useEffect(() => {
         setDisplayed(products);
     }, [products]);
 
     useEffect(() => {
-
+        setSearchParams(query);
         let finalProducts = searchProducts(products, query.search);
         finalProducts = filterProducts(finalProducts, query.category);
         setDisplayed(finalProducts);
     }, [query])
 
     const searchHandler = () => {
-        setQuery(query => ({...query,search}))
+        setQuery(query => createQueryObject(query, { search }))
     };
     const categoryHandler = (event) => {
         const { tagName } = event.target;
         const category = event.target.innerText.toLowerCase();
 
         if (tagName !== "LI") return;
-        setQuery(query => ({...query,category}))
+        setQuery(query => createQueryObject(query, { category }))
     }
     return (
         <>
