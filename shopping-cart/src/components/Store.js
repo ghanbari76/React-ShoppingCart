@@ -13,6 +13,7 @@ import { filterProducts, getInitialQuery, searchProducts } from '../helper/funct
 
 //Style
 import styles from "./Store.module.css"
+import Loader from './Loader';
 
 const Store = () => {
     const products = useContext(ProductsContext);
@@ -41,6 +42,7 @@ const Store = () => {
         <SearchBox search={search} setSearch={setSearch} setQuery={setQuery} />
         <div className={styles.container} >
             <div className={styles.products}>
+                {!products.length && <Loader />}
                 {displayed.map(product => <Product key={product.id} productData={product} /> )}
             </div>
             <Sidebar query={query} setQuery={setQuery} />    
