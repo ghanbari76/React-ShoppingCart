@@ -1,3 +1,4 @@
+import { FaListUl } from "react-icons/fa"
 import { createQueryObject } from '../helper/function';
 import { categories } from '../constant/list';
 
@@ -15,7 +16,7 @@ const Sidebar = ({ query, setQuery }) => {
     return (
         <div className={styles.sidebar}>
             <div>
-                <img width="64" height="64" src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/external-menu-multimedia-kiranshastry-gradient-kiranshastry-1.png" alt="external-menu-multimedia-kiranshastry-gradient-kiranshastry-1"/>
+                <FaListUl />
                 <p>Categories</p>
             </div>
             <ul onClick={categoryHandler}>

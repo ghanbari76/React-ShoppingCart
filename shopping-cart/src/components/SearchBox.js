@@ -1,3 +1,4 @@
+import { ImSearch } from "react-icons/im"
 import { createQueryObject } from '../helper/function';
 //style
 import styles from "./SearchBox.module.css";
@@ -15,7 +16,9 @@ const SearchBox = ({search,setSearch,setQuery}) => {
                 value={search} 
                 onChange={event => setSearch(event.target.value.toLowerCase().trim())} 
             />
-            <button onClick={searchHandler}>Search</button>
+            <button onClick={searchHandler}>
+                <ImSearch />
+            </button>
         </div>
     );
 };

@@ -2,7 +2,7 @@
     width: 200px;
     height: fit-content;
     margin: 10px;
-    padding: 10px;
+    padding: 20px;
     margin-left: 30px;
     background: #fff;
     border: 2px dashed #e2e2e2;
@@ -21,6 +21,7 @@
 }
 .sidebar li {
     list-style: none;
+    text-align: left;
     padding: 5px;
     cursor: pointer;
 }
