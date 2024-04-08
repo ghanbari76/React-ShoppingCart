@@ -1,0 +1,28 @@
+.search {
+    margin-top: 100px;
+}
+.search input {
+    padding: 10px;
+    border-radius:10px 0 0 10px;
+    border: 2px dashed rgb(245, 98, 84);
+
+    width: 300px;
+}
+.search input:focus { 
+    outline: none;
+}
+.search button {
+    padding: 10px;
+    border-radius: 0 10px 10px 0 ;
+    border: 2px dashed rgb(245, 98, 84);
+    border-left-color: white;
+}
+.search button:hover {
+    background-color: #ccf8e9;
+    transition: all 0.3s ease-in;
+}
+@media(max-width:555px) {
+    .search input {
+        width: 200px;
+    }
+}
