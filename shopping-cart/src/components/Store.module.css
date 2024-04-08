@@ -1,7 +1,7 @@
 .container {
     display: flex;
     justify-content: space-between;
-    padding: 0 150px;
+    padding: 0 100px;
     margin: 30px 0 30px;
 }
 .products {
@@ -13,33 +13,7 @@
     border-radius: 5px;
     padding: 10px 0 5px;
 }
-.searchContainer {
-    margin-top: 100px;
-}
-.searchContainer input {
-    padding: 10px;
-    border-radius:10px 0 0 10px;
-    border: 2px dashed rgb(245, 98, 84);
 
-    width: 300px;
-}
-.searchContainer input:focus {
-    outline: none;
-}
-.searchContainer button {
-    padding: 10px;
-    border-radius: 0 10px 10px 0 ;
-    border: 2px dashed rgb(245, 98, 84);
-    border-left-color: white;
-}
-.searchContainer button:hover {
-    background-color: burlywood;
-    border: 2px solid rgba(245, 98, 84,0.5) ;
-}
-.categoryList {
-    display: flex;
-    align-items: center;
-}
 @media(max-width:1200px) {
     .container {
         padding: 15px 80px;

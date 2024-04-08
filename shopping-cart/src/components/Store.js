@@ -3,13 +3,16 @@ import { useSearchParams } from 'react-router-dom';
 
 //Components
 import Product from './shared/Product';
+import SearchBox from './SearchBox';
+import Sidebar from './Sidebar';
 
 //Context
 import { ProductsContext } from '../context/ProductContextProvider';
 
+import { filterProducts, getInitialQuery, searchProducts } from '../helper/function';
+
 //Style
 import styles from "./Store.module.css"
-import { createQueryObject, filterProducts, getInitialQuery, searchProducts } from '../helper/function';
 
 const Store = () => {
     const products = useContext(ProductsContext);
@@ -33,39 +36,14 @@ const Store = () => {
         setDisplayed(finalProducts);
     }, [query])
 
-    const searchHandler = () => {
-        setQuery(query => createQueryObject(query, { search }))
-    };
-    const categoryHandler = (event) => {
-        const { tagName } = event.target;
-        const category = event.target.innerText.toLowerCase();
-
-        if (tagName !== "LI") return;
-        setQuery(query => createQueryObject(query, { category }))
-    }
     return (
         <>
-        <div className={styles.searchContainer}>
-            <input type='text' placeholder="I'm shopping for..." value={search} onChange={event => setSearch(event.target.value.toLowerCase().trim())} />
-            <button onClick={searchHandler}>Search</button>
-        </div>
+        <SearchBox search={search} setSearch={setSearch} setQuery={setQuery} />
         <div className={styles.container} >
             <div className={styles.products}>
                 {displayed.map(product => <Product key={product.id} productData={product} /> )}
             </div>
-            <div>
-                <div className={styles.categoryList}>
-                    <img width="64" height="64" src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/external-menu-multimedia-kiranshastry-gradient-kiranshastry-1.png" alt="external-menu-multimedia-kiranshastry-gradient-kiranshastry-1"/>
-                    <p>Categories</p>
-                </div>
-                <ul onClick={categoryHandler}>
-                    <li>All</li>
-                    <li>Electronics</li>
-                    <li>Jewelery</li>
-                    <li>Men's Clothing</li>
-                    <li>Women's Clothing</li>
-                </ul>
-            </div>
+            <Sidebar query={query} setQuery={setQuery} />    
         </div>
         </>
     );
