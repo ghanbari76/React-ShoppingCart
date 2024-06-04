@@ -25,7 +25,7 @@
     cursor: pointer;
 }
 .search button:hover {
-    background-color: #e32705;
+    background-color: #7b1604;
     transition: all 0.3s ease-in;
 }
 @media(max-width:555px) {
